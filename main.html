@@ -10,25 +10,37 @@
 <body>
 <a-scene>
     <a-assets>
-    
         <a-asset-item id="table-obj" src="coffee-shop-table.obj"></a-asset-item>
+        <a-asset-item id="dj_set-obj" src="dj_set.obj"></a-asset-item>
+        <a-asset-item id="dj_set-mtl" src="dj_set.mtl"></a-asset-item>
+        <a-asset-item id="boxen-obj" src="ampli.obj"></a-asset-item>
+        <a-asset-item id="boxen-mtl" src="ampli.mtl"></a-asset-item>
     </a-assets>
 
-    <a-entity obj-model="obj: #table-obj" width="300"></a-entity>
-    <a-plane position="0 0 0 0" rotation="-90 0 0" height=" 24" width=" 15" src="dance floor.jpg"> </a-plane>
+    <a-entity obj-model="obj: #table-obj" scale="1.6 1.6 1.6" position="0 0 9" ></a-entity>
+    <a-obj-model src="#dj_set-obj" mtl="#dj_set-mtl" scale="1.4 1.4 1.4" position="3.4 0 -9" rotation="0 180 0" ></a-obj-model>
+    <a-obj-model src="#boxen-obj" mtl="#boxen-mtl" scale="1.6 1.6 1.6" position="5 0 -11" rotation="0 0 0"></a-obj-model>
+    <a-obj-model src="#boxen-obj" mtl="#boxen-mtl" scale="1.6 1.6 1.6" position="-5 0 -11" rotation="0 0 0"></a-obj-model>
+    <a-plane position="0 0 0" rotation="-90 0 0" height="24" width="15" src="dansvloer.png"></a-plane>
+    <a-plane position="0 10 0" rotation="90 0 0" height="24" width="15" src="dak van dansvloer.png"></a-plane>
+    <a-plane position="0 5 12" rotation="-180 0 0" height="14" width="15" src="wall achter.png"></a-plane>
+    <a-plane position="0 5 -12" rotation="0 0 0" height="14" width="15" src="wall achter.png"></a-plane>
+    <a-plane position="7 5 0" rotation="0 -90 0" height="14" width="25" src="wall achter.png"></a-plane>
+    <a-plane position="-7 5 0" rotation="0 -270 0" height="14" width="25" src="wall achter.png" ></a-plane>
 
-    <a-camera>
-        <a-entity
+    <a-camera position="0 1.4 10">
+        <a-cursor s
             id="cursor"
             animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
             animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
             animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
             raycaster="objects: .interactable"
-            cursor="fuse: true; fuseTimeout: 1500"
-            position="0, 0, -1"
-            geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
-            material="color: black; shader: flat"
-        ></a-entity>
+            fuse="true" 
+            fuseTimeout="1500"
+            position="0 0 -2"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat">
+        </a-cursor>
     </a-camera>
 </a-scene>
 </body>
