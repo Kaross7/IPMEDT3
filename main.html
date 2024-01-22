@@ -18,8 +18,8 @@
         <a-asset-item id="digi-obj" src="obj/Plasma Television black.obj"></a-asset-item>
         <a-asset-item id="club-tafel-obj" src="obj/night club scene 001.obj"></a-asset-item>
         <a-asset-item id="club-tafel-mtl" src="obj/night club scene 001.mtl"></a-asset-item>
-
-        
+        <a-asset-item id="modern-tafel-mtl" src="obj/modern-curved-table.mtl"></a-asset-item>
+        <a-asset-item id="modern-tafel-obj" src="obj/modern-curved-table.obj"></a-asset-item>
 
     </a-assets>
 
@@ -33,6 +33,7 @@
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 0" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 3" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 6" rotation="0 120 0"></a-obj-model>
+    <a-obj-model src="#modern-tafel-obj" mtl="#modern-tafel-mtl" scale="0.45 0.45 0.45" position="0 0 10.1" rotation="0 0 0"></a-obj-model>
     <a-plane position="0 0 0" rotation="-90 0 0" height="24" width="15" src="images/dansvloer.png"></a-plane>
     <a-plane position="0 10 0" rotation="90 0 0" height="24" width="15" src="images/dak van dansvloer.png"></a-plane>
     <a-plane position="0 5 12" rotation="-180 0 0" height="14" width="15" src="images/wall achter.png"></a-plane>
@@ -40,7 +41,7 @@
     <a-plane position="7 5 0" rotation="0 -90 0" height="14" width="25" src="imageswall achter.png"></a-plane>
     <a-plane position="-7 5 0" rotation="0 -270 0" height="14" width="25" src="images/wall achter.png" ></a-plane>
 
-    <a-camera position="0 1.4 10">
+    <a-camera position="0 1.4 11.5">
         <a-cursor 
             id="cursor"
             animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -50,8 +51,8 @@
             fuse="true" 
             fuseTimeout="1500"
             position="0 0 -2"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-            material="color: black; shader: flat">
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04"
+            material="color: red; shader: flat">
         </a-cursor>
     </a-camera>
 </a-scene>
