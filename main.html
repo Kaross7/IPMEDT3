@@ -9,6 +9,8 @@
 </head>
 <body>
 <a-scene>
+    <a-sound src="muziek/Relax - Smooth Trap Soul Hip Hop Beat Chill Instrumental (Prod. Tower B. x L.E.M.).mp3" autoplay="true" position="0 2 -10"></a-sound>
+
     <a-assets>
         <a-asset-item id="dj_set-obj" src="obj/dj_set.obj"></a-asset-item>
         <a-asset-item id="dj_set-mtl" src="obj/dj_set.mtl"></a-asset-item>
@@ -50,8 +52,8 @@
             raycaster="objects: .interactable"
             fuse="true" 
             fuseTimeout="1500"
-            position="0 0 -2"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04"
+            position="0 0 -0.2"
+            geometry="primitive: ring; radiusInner: 0.002; radiusOuter: 0.004"
             material="color: red; shader: flat">
         </a-cursor>
     </a-camera>
