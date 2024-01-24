@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Proof of concept </title>
+
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+        
+
+
+    </head>
+
+    <body>
+        <a-scene>
+
+            <a-camera id="camera">
+                <a-entity 
+                id="cursor"
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 750; from: 1 1 1; to: 0.1 0.1 0.1"
+                animation__
+                mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                raycaster="objects: .js--clickable"
+                cursor="fuse: true; fuseTimeout: 750"
+                position="0 0 -0.5"
+                geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015"
+                material="color: black; shader: flat">
+                </a-entity>
+            </a-camera>
+
+
+            <a-assets>
+
+                <a-asset-item id="Bottle-obj" src="models/Bottle.obj"></a-asset-item>
+                <a-asset-item id="Glass-obj" src="models/Glass.obj"></a-asset-item>
+
+            </a-assets>
+            
+            <!-- BottleLiquidSpawn Container -->
+            <a-entity id="spawnedbottleliquidspawners" spawnedbottleliquidspawners></a-entity>
+
+            <!-- Bottle 1 -->
+            <a-obj-model id="kind1-bottle1" class="js--bottle" src="#Bottle-obj" material="color: #FFA500;" position="3 2 -7" scale="0.15 0.15 0.15" rotation="-90 -90 0"></a-obj-model>
+            <a-sphere id="liquidSpawnBottle1" material="color: #00FF00;" position="3 6.5 -7" scale="0.25 0.25 0.25" rotation="-90 -90 0"></a-sphere>
+
+            <!-- Bottle 2 -->    
+            <a-obj-model id="kind1-bottle2" class="js--bottle" src="#Bottle-obj" material="color: #FF0000;" position="-3 2 -7" scale="0.15 0.15 0.15" rotation="-90 90 0"></a-obj-model>
+            <a-sphere id="liquidSpawnBottle2" material="color: #00FF00" position="-3 6.5 -7" scale="0.25 0.25 0.25" rotation="-90 -90 0"></a-sphere>
+            
+            <a-plane position="0 -1.5 -7.5" scale="10 10 10" rotation="-90 0 0" color="#C4A484"></a-plane>> </a-plane>
+
+            <a-sky color="#d3d3d3"> </a-sky>
+
+
+        </a-scene>
+    </body>
+
+<script src="scripts/bottleliquidspawners.js"></script>
+
+</html>
