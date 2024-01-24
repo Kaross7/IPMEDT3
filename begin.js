@@ -1,10 +1,10 @@
 
 const cocktailList = [
-    "Pornstar Martini", 
-    "Whiskey Sour", 
-    "Bacardi Lemon Cola", 
-    "Bessen Jus", 
-    "Gin Tonic", 
+    "Wodka Old Fashioned", 
+    "Wodka Sour", 
+    "Wodka Collins", 
+    "Wodka Martini", 
+    "Moscow Mule", 
 
 ];
 const numberList = [];
@@ -89,16 +89,21 @@ function updateCheckbox(cocktail) {
 
 function getInstructionsForCocktail(cocktail) {
     switch (cocktail) {
-        case 'Pornstar Martini':
-            return "1. Voeg 60 ml vanille-wodka toe aan een shaker.\n2. Voeg 30 ml passievruchtensap toe aan de shaker.\n3. Voeg 15 ml vanillesiroop toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een martiniglas en serveer met een schijfje passievrucht aan de zijkant.";
-        case 'Whiskey Sour':
-            return "1. In een shaker, combineer 60 ml bourbon whiskey.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml eenvoudige siroop (suikerwater) toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een whiskyglas met ijs.";
-        case 'Bacardi Lemon Cola':
-            return "1. Vul een glas met ijsblokjes.\n2. Voeg 50 ml Bacardi Limón toe.\n3. Giet 150 ml cola over de Bacardi Limón.\n4. Roer voorzichtig.\n5. Garneer met een schijfje citroen.";
-        case 'Bessen Jus':
-            return "1. Vul een glas met 60 ml bessensap.\n2. Voeg 30 ml sinaasappelsap toe.\n3. Giet voorzichtig 30 ml ananassap erbij.\n4. Roer de sappen goed door elkaar.\n5. Garneer met een paar verse bessen.";
-        case 'Gin Tonic':
-            return "1. Vul een glas met ijsblokjes.\n2. Voeg 50 ml gin toe aan het glas.\n3. Giet 150 ml tonic water over de gin.\n4. Roer voorzichtig.\n5. Garneer met een schijfje citroen of limoen.";
+        case 'Wodka Sour':
+            return "1. Vul een shaker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een glas en serveer met een schijfje citroen.";
+
+        case 'Moscow Mule':
+            return "1. Vul een glas met ijsblokjes.\n2. Voeg 60 ml wodka toe.\n3. Giet 120 ml ginger beer over de wodka.\n4. Voeg 15 ml vers citroensap toe.\n5. Garneer optioneel met een schijfje citroen.";
+
+        case 'Wodka Martini':
+            return "1. Vul een mixglas met 60 ml wodka.\n2. Voeg 15 ml citroensap toe.\n3. Roer de ingrediënten goed door.\n4. schemk de inhoud in een glas.\n5. serveer meet schijfje citroen.";
+
+        case 'Wodka Collins':
+            return "1. Vul een shaker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Voeg 60 ml bruiswater toe.\n5. Schenk de ingrediënten goed met ijs en de inhoud in een glas. Garneer met een schijfje citroen.";
+
+        case 'Wodka Old Fashioned':
+            return "1. Plaats een suikerklontje in een glas.\n2. Voeg een paar druppels Angostura bitters toe.\n3. begin te roeren .\n4. Voeg 60 ml wodka toe en roer opnieuw.\n5. Garneer met citroenschijf.";
+
         default:
             return "Geen instructies beschikbaar voor deze cocktail.";
     }
