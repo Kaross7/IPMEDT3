@@ -67,6 +67,8 @@ const main = () => {
     const textField = document.getElementById("js_textfield");
     const ingredients = document.getElementById("js_ingredients");
 
+    alert("Test");
+
     good.addEventListener('click',function(textField, ingredients){
         return function(){
             goodOrder(textField, ingredients);
