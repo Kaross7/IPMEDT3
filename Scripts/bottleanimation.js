@@ -20,8 +20,8 @@ const SetSelectedBottle = (event) => {
 
     const bottleColor = event.target.getAttribute("material");
 
-    SelectedBottle = document.getElementById("SelectedBottle");
-    SelectedBottle.setAttribute("color", bottleColor.color);
+    SelectedBottle = document.getElementsByClassName("SelectedBottle");
+    SelectedBottle[0].setAttribute("color", bottleColor.color);
 }
 
 const ResetLiquid = (event) => {
@@ -42,10 +42,10 @@ const LiquidPoured = (bottle) => {
 };
 
 const ChangeLiquidColor = (bottle) => {
-    const bottleColor = bottle.getAttribute("material");
+    const bottleColor = bottle[0].getAttribute("material");
 
     if (liquorColor != ""){
-    console.log(1);
+
         combineColors(bottleColor.color);
     }
     else{
@@ -99,7 +99,7 @@ const BottleTiltAnimation = (position, rotation) => {
 
 
 
-/*AFRAME.registerComponent('bottle-updater', {
+AFRAME.registerComponent('bottle-updater', {
     init: function () {
       // Start the interval with a delay of 1000 milliseconds (1 second)
       setInterval(this.runEveryOtherSecond.bind(this), 0);
@@ -108,18 +108,16 @@ const BottleTiltAnimation = (position, rotation) => {
     runEveryOtherSecond: function () {
       // Your method logic here, to be executed every other second
       const bottle = document.getElementsByClassName("SelectedBottle");
-      const bottleRotation = bottle.getAttribute("rotation");
-      console.log(1);
+      const bottleRotation = bottle[0].getAttribute("rotation");
   
-      if (bottleRotation.x > 0) {
+      if (bottleRotation.x >= 0) {
         LiquidPoured(bottle);
-  
         const liquidObject = document.getElementById("StandartGlassLiquid");
-        liquidObject.setAttribute("position", "-1.65 0.2 -6");
-        liquidObject.setAttribute("scale", "0.7 0.1 0.7");
+        liquidObject.setAttribute("position", "-0.094 1.218 10.223");
+        liquidObject.setAttribute("scale", "0.040 0.010 0.040");
       }
     }
-  });*/
+  });
   
 
 
@@ -129,17 +127,17 @@ const Init = () => {
     SelectedBottle = document.getElementsByClassName("SelectedBottle");
     SelectedBottle[0].addEventListener("click", TiltBottle);
 
-    /*ShowBottleList = document.getElementsByClassName("js--ShowBottle");
+    ShowBottleList = document.getElementsByClassName("js--ShowBottle");
     for (let i = 0; i < ShowBottleList.length; i++) {
       const ShowBottle = ShowBottleList[i];
       ShowBottle.addEventListener("click", SetSelectedBottle);
-    }*/
+    }
 
-    /*GlassList = document.getElementsByClassName("js--Glass");
+    GlassList = document.getElementsByClassName("js--Glass");
     for (let i = 0; i < GlassList.length; i++) {
       const Glass = GlassList[i];
       Glass.addEventListener("click", ResetLiquid);
-    }*/
+    }
   
 }
 

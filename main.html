@@ -51,12 +51,23 @@
     <a-entity id="spawnedpouredliquid" spawnedpouredliquid></a-entity>
 
 
-    <!-- Bottles -->
-    <a-obj-model id="kind1-bottle1" class="js--bottle" src="#Bottle-obj" material="color: #FFA500;" position="-0.526 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
-    <a-obj-model id="kind1-bottle2" class="js--bottle SelectedBottle interactable" src="#Bottle-obj" material="color: #FF0000;" position="0.273 1.119 10.223" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <!-- MainBottle -->
+    <a-obj-model id="kind1-bottle1" class="js--bottle SelectedBottle interactable" src="#Bottle-obj" material="color: #00FF00;" position="0.273 1.119 10.223" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+
+    <!-- Selectable bottles -->   
+    <a-obj-model id="BottleWithTequila" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #FFA500;" position="-0.20 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
+
+    <a-obj-model id="BottleWithWhiskey" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #A52A2A;" position="-0.35 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
+
+    <a-obj-model id="BottleWithChampagne" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #FFFF8F;" position="-0.526 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
 
     <!-- Glass -->
-    <a-obj-model id="kind1-bottle2" class="js--glass" src="#Glass-obj" material="color: #FF00FF;" position="-0.083 1.119 10.223" scale="0.0006 0.0006 0.0006" rotation="0 0 0"></a-obj-model>
+    <a-obj-model id="StandartGlass" class="js--glass" src="#Glass-obj" material="color: #FF00FF;" position="-0.083 1.119 10.223" scale="0.0006 0.0006 0.0006" rotation="0 0 0"></a-obj-model>
+    <a-cylinder id="StandartGlassLiquid" position="-0.083 1.119 10.223" scale="0 0 0" rotation="0 0 0" color="#99c0e3"></a-cylinder>
+
 
 
     <a-camera position="0 1.4 11.5">
