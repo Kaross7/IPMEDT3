@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-    <script src="begin.js"></script>
 </head>
 <body>
 <a-scene>
@@ -22,6 +21,9 @@
         <a-asset-item id="club-tafel-mtl" src="obj/night club scene 001.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-mtl" src="obj/modern-curved-table.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-obj" src="obj/modern-curved-table.obj"></a-asset-item>
+
+        <a-asset-item id="Bottle-obj" src="obj/Bottle.obj"></a-asset-item> 
+        <a-asset-item id="Glass-obj" src="obj/Glass.obj"></a-asset-item>
 
     </a-assets>
 
@@ -43,6 +45,20 @@
     <a-plane position="7 5 0" rotation="0 -90 0" height="14" width="25" src="imageswall achter.png"></a-plane>
     <a-plane position="-7 5 0" rotation="0 -270 0" height="14" width="25" src="images/wall achter.png" ></a-plane>
 
+
+
+    <a-entity id="spawnedbottleliquidspawners" spawnedbottleliquidspawners></a-entity>
+    <a-entity id="spawnedpouredliquid" spawnedpouredliquid></a-entity>
+
+
+    <!-- Bottles -->
+    <a-obj-model id="kind1-bottle1" class="js--bottle" src="#Bottle-obj" material="color: #FFA500;" position="-0.526 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-obj-model id="kind1-bottle2" class="js--bottle SelectedBottle interactable" src="#Bottle-obj" material="color: #FF0000;" position="0.273 1.119 10.223" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+
+    <!-- Glass -->
+    <a-obj-model id="kind1-bottle2" class="js--glass" src="#Glass-obj" material="color: #FF00FF;" position="-0.083 1.119 10.223" scale="0.0006 0.0006 0.0006" rotation="0 0 0"></a-obj-model>
+
+
     <a-camera position="0 1.4 11.5">
         <a-cursor 
             id="cursor"
@@ -59,4 +75,10 @@
     </a-camera>
 </a-scene>
 </body>
+
+<!-- SCRIPTS!!! -->
+<script src="Scripts/begin.js"></script>
+<script src="Scripts/bottleliquidspawners.js"></script>
+<script src="Scripts/bottleanimation.js"></script>
+
 </html>

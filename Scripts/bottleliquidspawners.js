@@ -30,8 +30,8 @@ const SpawnNewBottleLiquidSpawner = (bottle, bottleNumber) => {
   // Calculate the new position by adding parent's position to the desired offset
   const newPosition = {
     x: bottlePosition.x,
-    y: bottlePosition.y,
-    z: bottlePosition.z + 31
+    y: bottlePosition.y + 1,
+    z: bottlePosition.z + 30
 
   };
 
@@ -46,12 +46,18 @@ const SpawnPouredLiquid = (bottleLiquidSpawner) => {
 
   var newPouredLiquid = document.createElement('a-box');
   newPouredLiquid.setAttribute("position", "0, 0, 0");
-  newPouredLiquid.setAttribute("scale", "1 1 1");
+  newPouredLiquid.setAttribute("scale", "1.5 1.5 1.5");
   newPouredLiquid.setAttribute("class", "pouredliquid");
   newPouredLiquid.setAttribute("color", "#0000ff");
 
   bottleLiquidSpawner.appendChild(newPouredLiquid);
   _spawnedPouredLiquid.push(newPouredLiquid);
+
+}
+
+const DespawnPouredLiquid = (oldPouredLiquid) => {
+
+  oldPouredLiquid.remove();
 
 }
 
@@ -81,6 +87,7 @@ AFRAME.registerComponent('spawnedbottleliquidspawners', {
 
             SpawnPouredLiquid(_spawnedBottleLiquidSpawners[i]);
 
+
           }
 
         }
@@ -96,6 +103,12 @@ AFRAME.registerComponent('spawnedbottleliquidspawners', {
 AFRAME.registerComponent('spawnedpouredliquid', {
   tick: function () {
       for (let i = 0; i < _spawnedPouredLiquid.length; i++){
+
+        if (_spawnedPouredLiquid[i].getAttribute("position").y <= -27){
+
+          DespawnPouredLiquid(_spawnedPouredLiquid[i]);
+
+        }
 
         UpdatePositionPouredLiquid(_spawnedPouredLiquid[i])
 
