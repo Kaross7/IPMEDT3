@@ -12,7 +12,7 @@ const recepten = [
     ["1. Vul een mixglas met 60 ml wodka.", "2. Voeg 15 ml citroensap toe.", "3. Roer de ingrediënten goed door.", "4. schemk de inhoud in een glas.", "5. serveer meet schijfje citroen."],
     ["1. Vul een shaker met 60 ml wodka.", "2. Voeg 30 ml vers citroensap toe.", "3. Voeg 15 ml suikersiroop toe.", "4. Voeg 60 ml bruiswater toe.", "5. Schenk de ingrediënten goed met ijs en de inhoud in een glas. Garneer met een schijfje citroen."],
     ["1. Plaats een suikerklontje in een glas.", "2. Voeg een paar druppels Angostura bitters toe.", "3. begin te roeren .", "4. Voeg 60 ml wodka toe en roer opnieuw.", "5. Garneer met citroenschijf."]
-]
+];
 
 const numberList = [
     "bitter",
