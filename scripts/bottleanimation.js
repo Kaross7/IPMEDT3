@@ -93,7 +93,7 @@ const LiquidPoured = (bottle) => {
 };
 
 const ChangeLiquidColor = (bottle) => {
-    const bottleColor = bottle[0].getAttribute("material");
+    const bottleColor = bottle.getAttribute("material");
 
     if (liquorColor != ""){
 
@@ -122,7 +122,6 @@ const combineColors = (hexClickedColor) => {
 
 
 const BottleTiltAnimation = (event, position, rotation) => {
-    console.log("joehoeeeeeeeeeeeeeee!!");
 
     if (event.target.getAttribute('animation__reposition')) {
       event.target.removeAttribute('animation__reposition');
@@ -161,8 +160,7 @@ AFRAME.registerComponent('bottle-updater', {
       for (let i = 0; i < SelectedBottle.length; i++){
       const bottle = SelectedBottle[i];
       const bottleRotation = bottle.getAttribute("rotation");
-        console.log("joehoeeeee");
-      if (bottleRotation.x >= 0) {
+      if (bottleRotation.x <= 15) {
         LiquidPoured(bottle); console.log("hoeeejoeee");
         const liquidObject = document.getElementById("StandartGlassLiquid");
         liquidObject.setAttribute("position", "-0.094 1.218 10.223");

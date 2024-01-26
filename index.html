@@ -46,6 +46,8 @@
     <a-entity id="cocktailButton" geometry="primitive: box; width: 1; height: 0.5; depth: 0.05" material="color: #3498db" position="2.5 2 9" rotation="0 -30 0" class="interactable" clickable></a-entity>
     <a-entity id="cocktailText" text="value: Klik hier voor een cocktail; color: white; align: center; width: 4" position="2.5 2.6 9" rotation="0 -30 0"></a-entity>
     <a-entity id="cocktailInstructions"></a-entity>
+    <a-entity id="CheckButton" geometry="primitive: box; width: 1; height: 0.5; depth: 0.05" material="color: green" position="2.5 1 9" rotation="0 -30 0" class="interactable" clickable></a-entity>
+    <a-entity id="CheckText" text="value: Klik hier als je klaar bent; color: white; align: center; width: 4" position="2.5 1.6 9" rotation="0 -30 0"></a-entity>
 
 
 
@@ -72,8 +74,9 @@
 
     <a-entity id="spawnedbottleliquidspawners" spawnedbottleliquidspawners></a-entity>
     <a-entity id="spawnedpouredliquid" spawnedpouredliquid></a-entity>
+    <a-entity id="bottle-updater" bottle-updater></a-entity>
 
-    <a-obj-model id="wodka" class="js--ShowBottle SelectedBottle interactable" src="#wodka-obj" mtl="#wodka-mtl" position="-0.20 0.645 10.3734" scale="0.08 0.08 0.08" rotation="0 -90 0"></a-obj-model>
+    <a-obj-model id="wodka" class="js--ShowBottle SelectedBottle interactable" src="#wodka-obj" mtl="#wodka-mtl" position="-0.20 0.645 10.3734" scale="0.08 0.08 0.08"mmaterial="#ff0000" rotation="0 -90 0"></a-obj-model>
     <a-obj-model id="bruiswater" class="js--ShowBottle SelectedBottle interactable" src="#bruiswater-obj" mtl="#bruiswater-mtl" position="-0.35 0.645 10.373" material="#ff0000" scale="0.06 0.06 0.06" rotation="0 -90 0"></a-obj-model>
     <a-obj-model id="gingerbeer" class="js--ShowBottle SelectedBottle interactable" src="#gingerbeer-obj" mtl="#gingerbeer-mtl" position="-0.5 0.645 10.373" scale="0.06 0.06 0.06" rotation="0 -90 0"></a-obj-model>
     <a-obj-model id="citroensap" class="js--ShowBottle SelectedBottle interactable" src="#citroensap-obj" mtl="#citroensap-mtl" position="-0.65 0.645 10.373" scale="0.06 0.06 0.06" rotation="0 -90 0"></a-obj-model>

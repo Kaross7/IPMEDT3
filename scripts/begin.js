@@ -19,6 +19,10 @@ const numberList = [
 ];
 const ingredientList = [];
 
+document.getElementById("CheckButton").addEventListener("click", function(evt){
+    document.getElementById("CheckText").setAttribute("text", "value", "Wow goed gedaan!");
+});
+
 
 function startNieuweCocktail() {
 
@@ -115,3 +119,4 @@ function getInstructionsForCocktail(cocktail) {
             return "Geen instructies beschikbaar voor deze cocktail.";
     }
 }
+
