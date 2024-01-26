@@ -22,10 +22,23 @@
         <a-asset-item id="club-tafel-mtl" src="obj/night club scene 001.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-mtl" src="obj/modern-curved-table.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-obj" src="obj/modern-curved-table.obj"></a-asset-item>
-
+        <a-asset-item id="wodka-obj" src="obj/wodka/smirnoff_obj.obj"></a-asset-item>
+        <a-asset-item id="wodka-mtl" src="obj/wodka/smirnoff_obj.mtl"></a-asset-item>
+        <a-asset-item id="sugar-obj" src="obj/sugar/sugar_obj.obj"></a-asset-item>
+        <a-asset-item id="sugar-mtl" src="obj/sugar/sugar_obj.mtl"></a-asset-item>
+        <a-asset-item id="ijs-obj" src="obj/ijs/ijs_obj.obj"></a-asset-item>
+        <a-asset-item id="ijs-mtl" src="obj/ijs/ijs_obj.mtl"></a-asset-item>
+        <a-asset-item id="gingerbeer-obj" src="obj/gingerbeer/gingerbeer_obj.obj"></a-asset-item>
+        <a-asset-item id="gingerbeer-mtl" src="obj/gingerbeer/gingerbeer_obj.mtl"></a-asset-item>
+        <a-asset-item id="citroensap-obj" src="obj/citroensap/citroensap_obj.obj"></a-asset-item>
+        <a-asset-item id="citroensap-mtl" src="obj/citroensap/citroensap_obj.mtl"></a-asset-item>
+        <a-asset-item id="citroen_schijf-obj" src="obj/citroen_schijf/citroenschijf_obj.obj"></a-asset-item>
+        <a-asset-item id="citroen_schijf-mtl" src="obj/citroen_schijf/citroenschijf_obj.mtl"></a-asset-item>
+        <a-asset-item id="bruiswater-obj" src="obj/bruiswater/bruiswater_obj.obj"></a-asset-item>
+        <a-asset-item id="bruiswater-mtl" src="obj/bruiswater/bruiswater_obj.mtl"></a-asset-item>
         <a-asset-item id="Bottle-obj" src="obj/Bottle.obj"></a-asset-item>
         <a-asset-item id="Glass-obj" src="obj/Glass.obj"></a-asset-item>
-
+        
     </a-assets>
     <a-entity id="cocktailButton" geometry="primitive: box; width: 1; height: 0.5; depth: 0.05" material="color: #3498db" position="2.5 2 9" rotation="0 -30 0" class="interactable" clickable></a-entity>
     <a-entity id="cocktailText" text="value: Klik hier voor een cocktail; color: white; align: center; width: 4" position="2.5 2.6 9" rotation="0 -30 0"></a-entity>
@@ -43,6 +56,9 @@
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 0" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 3" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 6" rotation="0 120 0"></a-obj-model>
+
+    <a-obj-model id="wodka" class="js--ShowBottle interactable" scr="#wodka-obj" mtl="wodka-mtl" position="2 -1 -4" scale="0.35 0.35 0.35"></a-obj-model>
+
     <a-obj-model src="#modern-tafel-obj" mtl="#modern-tafel-mtl" scale="0.45 0.45 0.45" position="0 0 10.1" rotation="0 0 0"></a-obj-model>
     <a-plane position="0 0 0" rotation="-90 0 0" height="24" width="15" src="images/dansvloer.png"></a-plane>
     <a-plane position="0 10 0" rotation="90 0 0" height="24" width="15" src="images/dak van dansvloer.png"></a-plane>
@@ -87,7 +103,7 @@
             material="color: red; shader: flat">
                 
         </a-cursor>
-        <a-entity scale="0.1 0.1 0" id="cocktailInstructionsContainer" position="-0.6 0.45 -0.7"></a-entity>
+        <a-entity scale="0.1 0.1 0" id="cocktailInstructionsContainer" position="-0.6 0.45 -0.7"></a-entity> 
     </a-camera>
 </a-scene>
 </body>
