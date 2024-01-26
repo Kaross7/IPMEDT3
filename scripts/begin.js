@@ -11,15 +11,11 @@ const numberList = [];
 const ingredientList = [];
 
 
-function startAudioContext() {
-    const audio = document.getElementById('background-music');
-    if (audio.components.sound) {
-        audio.components.sound.playSound();
-    }
+function startNieuweCocktail() {
 
     document.getElementById('cocktailButton').addEventListener('click', showRandomCocktailInstructions);
 
-    document.removeEventListener('click', startAudioContext);
+    document.removeEventListener('click', startNieuweCocktail);
 }
 
 function showRandomCocktailInstructions() {
@@ -54,7 +50,7 @@ function laatCocktailZien(cocktail) {
     scene.appendChild(newTextEntity);
 }
 
-document.addEventListener('DOMContentLoaded', startAudioContext);
+document.addEventListener('DOMContentLoaded', startNieuweCocktail);
 
 function createCocktailInstructions(cocktail) {
     const container = document.getElementById('cocktailInstructionsContainer');
