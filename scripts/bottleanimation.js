@@ -2,14 +2,28 @@ let BottleList = null;
 let SpilledOnce = false;
 let liquorColor = "";
 let _pouringPosition = false;
+let SelectedBottle;
 
 
 const TiltBottle = (event) => {
 
-    BottleTiltAnimation("0.273, 1.484, 10.223","0, -90, 0")
+  BottleTiltAnimation(event, "0.273, 1.484, 10.223","0, -90, 0")
+
+
+  let position = "";
+  let rotation = "";
+
+  switch(event.target.getAttribute("id")){
+    
+    case "wodka":
+      position = "0.273, 8, 10.223";
+      rotation = "-90, -90, 0";
+      break;
+
+  }
 
     setTimeout(() => {
-      BottleTiltAnimation("0.273, 1.119, 10.223", "-90, -90, 0");
+      BottleTiltAnimation(event, position, rotation);
     }, 5000);
 
 }
@@ -70,25 +84,25 @@ const combineColors = (hexClickedColor) => {
 
 
 
-const BottleTiltAnimation = (position, rotation) => {
-    var SelectedBottle = document.getElementsByClassName('SelectedBottle');
+const BottleTiltAnimation = (event, position, rotation) => {
+    console.log("joehoeeeeeeeeeeeeeee!!");
 
-    if (SelectedBottle[0].getAttribute('animation__reposition')) {
-        SelectedBottle[0].removeAttribute('animation__reposition');
+    if (event.target.getAttribute('animation__reposition')) {
+      event.target.removeAttribute('animation__reposition');
     }
 
-    if (SelectedBottle[0].getAttribute('animation__rotate')){
-      SelectedBottle[0].removeAttribute('animation__rotate')
+    if (event.target.getAttribute('animation__rotate')){
+      event.target.removeAttribute('animation__rotate')
     }
     
-      SelectedBottle[0].setAttribute('animation__reposition', {
+    event.target.setAttribute('animation__reposition', {
         property: 'position',
         dur: 3000,
         to: position,
         loop: false
       });
 
-      SelectedBottle[0].setAttribute('animation__rotate', {
+      event.target.setAttribute('animation__rotate', {
         property: 'rotation',
         dur: 3000,
         to: rotation,
@@ -107,14 +121,16 @@ AFRAME.registerComponent('bottle-updater', {
   
     runEveryOtherSecond: function () {
       // Your method logic here, to be executed every other second
-      const bottle = document.getElementsByClassName("SelectedBottle");
-      const bottleRotation = bottle[0].getAttribute("rotation");
+      for (let i = 0; i < SelectedBottle.length; i++){
+      const bottle = SelectedBottle[i];
+      const bottleRotation = bottle.getAttribute("rotation");
   
       if (bottleRotation.x >= 0) {
         LiquidPoured(bottle);
         const liquidObject = document.getElementById("StandartGlassLiquid");
         liquidObject.setAttribute("position", "-0.094 1.218 10.223");
         liquidObject.setAttribute("scale", "0.040 0.010 0.040");
+      }
       }
     }
   });
@@ -125,7 +141,9 @@ AFRAME.registerComponent('bottle-updater', {
 const Init = () => {
 
     SelectedBottle = document.getElementsByClassName("SelectedBottle");
-    SelectedBottle[0].addEventListener("click", TiltBottle);
+    for (let i = 0; i < SelectedBottle.length; i++){
+    SelectedBottle[i].addEventListener("click", TiltBottle);
+    }
 
     ShowBottleList = document.getElementsByClassName("js--ShowBottle");
     for (let i = 0; i < ShowBottleList.length; i++) {
