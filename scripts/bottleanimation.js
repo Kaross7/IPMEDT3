@@ -7,7 +7,7 @@ let SelectedBottle;
 
 const TiltBottle = (event) => {
 
-  BottleTiltAnimation(event, "0.273, 1.484, 10.223","0, -90, 0")
+  BottleTiltAnimation(event, "0.273, 1.484, 10.223","90, -90, 0")
 
 
   let position = "";
@@ -16,9 +16,46 @@ const TiltBottle = (event) => {
   switch(event.target.getAttribute("id")){
     
     case "wodka":
-      position = "0.273, 8, 10.223";
-      rotation = "-90, -90, 0";
+      position = "-0.20 0.645 10.3734";
+      rotation = "0, -90, 0";
       break;
+
+    case "bruiswater":
+      position = "-0.35 0.645 10.373";
+      rotation = "0, -90, 0";
+      break;
+
+    case "gingerbeer":
+      position = "-0.5 0.645 10.373";
+      rotation = "0, -90, 0";
+      break;
+
+    case "citroensap":
+      position = "-0.65 0.645 10.373";
+      rotation = "0, -90, 0";
+      break;
+
+    case "bitters":
+      position = "-0.05 0.645 10.373";
+      rotation = "0, -90, 0";
+      break;
+
+    case "suikersiroop":
+      position = "0.1 0.645 10.373";
+      rotation = "0, -90, 0";
+      break;
+
+    case "ijs":
+      position = "-0.3 1.119 10.223";
+      rotation = "0, -90, 0";
+      break;
+
+    case "sugar":      
+      position = "-0.5 1.119 10.223";
+      rotation = "0, -90, 0";
+      break;
+
+
 
   }
 
@@ -124,9 +161,9 @@ AFRAME.registerComponent('bottle-updater', {
       for (let i = 0; i < SelectedBottle.length; i++){
       const bottle = SelectedBottle[i];
       const bottleRotation = bottle.getAttribute("rotation");
-  
+        console.log("joehoeeeee");
       if (bottleRotation.x >= 0) {
-        LiquidPoured(bottle);
+        LiquidPoured(bottle); console.log("hoeeejoeee");
         const liquidObject = document.getElementById("StandartGlassLiquid");
         liquidObject.setAttribute("position", "-0.094 1.218 10.223");
         liquidObject.setAttribute("scale", "0.040 0.010 0.040");
