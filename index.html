@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-    <script src="begin.js"></script>
 </head>
 <body>
 <a-scene>
-    <a-sound id="background-music" src="muziek/Relax - Smooth Trap Soul Hip Hop Beat Chill Instrumental (Prod. Tower B. x L.E.M.).mp3" position="0 2 -10.3"></a-sound>
-
     <a-assets>
     
-        <a-asset-item id="dj_set-obj" src="obj/dj_set.obj"></a-asset-item>
+        <a-asset-item id="dj_set-obj" src="obj/dj_set.obj" ></a-asset-item>
         <a-asset-item id="dj_set-mtl" src="obj/dj_set.mtl"></a-asset-item>
         <a-asset-item id="boxen-obj" src="obj/ampli.obj"></a-asset-item>
         <a-asset-item id="boxen-mtl" src="obj/ampli.mtl"></a-asset-item>
@@ -23,7 +20,23 @@
         <a-asset-item id="club-tafel-mtl" src="obj/night club scene 001.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-mtl" src="obj/modern-curved-table.mtl"></a-asset-item>
         <a-asset-item id="modern-tafel-obj" src="obj/modern-curved-table.obj"></a-asset-item>
-
+        <a-asset-item id="wodka-obj" src="obj/wodka/smirnoff_obj.obj"></a-asset-item>
+        <a-asset-item id="wodka-mtl" src="obj/wodka/smirnoff_obj.mtl"></a-asset-item>
+        <a-asset-item id="sugar-obj" src="obj/sugar/sugar_obj.obj"></a-asset-item>
+        <a-asset-item id="sugar-mtl" src="obj/sugar/sugar_obj.mtl"></a-asset-item>
+        <a-asset-item id="ijs-obj" src="obj/ijs/ijs_obj.obj"></a-asset-item>
+        <a-asset-item id="ijs-mtl" src="obj/ijs/ijs_obj.mtl"></a-asset-item>
+        <a-asset-item id="gingerbeer-obj" src="obj/gingerbeer/gingerbeer_obj.obj"></a-asset-item>
+        <a-asset-item id="gingerbeer-mtl" src="obj/gingerbeer/gingerbeer_obj.mtl"></a-asset-item>
+        <a-asset-item id="citroensap-obj" src="obj/citroensap/citroensap_obj.obj"></a-asset-item>
+        <a-asset-item id="citroensap-mtl" src="obj/citroensap/citroensap_obj.mtl"></a-asset-item>
+        <a-asset-item id="citroen_schijf-obj" src="obj/citroen_schijf/citroenschijf_obj.obj"></a-asset-item>
+        <a-asset-item id="citroen_schijf-mtl" src="obj/citroen_schijf/citroenschijf_obj.mtl"></a-asset-item>
+        <a-asset-item id="bruiswater-obj" src="obj/bruiswater/bruiswater_obj.obj"></a-asset-item>
+        <a-asset-item id="bruiswater-mtl" src="obj/bruiswater/bruiswater_obj.mtl"></a-asset-item>
+        <a-asset-item id="Bottle-obj" src="obj/Bottle.obj"></a-asset-item>
+        <a-asset-item id="Glass-obj" src="obj/Glass.obj"></a-asset-item>
+        
     </a-assets>
     <a-entity id="cocktailButton" geometry="primitive: box; width: 1; height: 0.5; depth: 0.05" material="color: #3498db" position="2.5 2 9" rotation="0 -30 0" class="interactable" clickable></a-entity>
     <a-entity id="cocktailText" text="value: Klik hier voor een cocktail; color: white; align: center; width: 4" position="2.5 2.6 9" rotation="0 -30 0"></a-entity>
@@ -41,6 +54,9 @@
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 0" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 3" rotation="0 120 0"></a-obj-model>
     <a-obj-model src="#club-tafel-obj" mtl="#club-tafel-mtl" scale="0.8 0.8 0.8" position="-4 0 6" rotation="0 120 0"></a-obj-model>
+
+    <a-obj-model id="wodka" class="js--ShowBottle interactable" src="#wodka-obj" mtl="wodka-mtl" position="2 -1 -4" scale="0.35 0.35 0.35"></a-obj-model>
+
     <a-obj-model src="#modern-tafel-obj" mtl="#modern-tafel-mtl" scale="0.45 0.45 0.45" position="0 0 10.1" rotation="0 0 0"></a-obj-model>
     <a-plane position="0 0 0" rotation="-90 0 0" height="24" width="15" src="images/dansvloer.png"></a-plane>
     <a-plane position="0 10 0" rotation="90 0 0" height="24" width="15" src="images/dak van dansvloer.png"></a-plane>
@@ -48,6 +64,28 @@
     <a-plane position="0 5 -12" rotation="0 0 0" height="14" width="15" src="images/wall achter.png"></a-plane>
     <a-plane position="7 5 0" rotation="0 -90 0" height="14" width="25" src="images/wall achter.png"></a-plane>
     <a-plane position="-7 5 0" rotation="0 -270 0" height="14" width="25" src="images/wall achter.png" ></a-plane>
+
+
+
+    <a-entity id="spawnedbottleliquidspawners" spawnedbottleliquidspawners></a-entity>
+    <a-entity id="spawnedpouredliquid" spawnedpouredliquid></a-entity>
+
+
+    <a-obj-model id="kind1-bottle1" class="js--bottle SelectedBottle interactable" src="#Bottle-obj" material="color: #00FF00;" position="0.273 1.119 10.223" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+
+    <a-obj-model id="BottleWithTequila" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #FFA500;" position="-0.20 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
+
+    <a-obj-model id="BottleWithWhiskey" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #A52A2A;" position="-0.35 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
+
+    <a-obj-model id="BottleWithChampagne" class="js--ShowBottle interactable" src="#Bottle-obj" material="color: #FFFF8F;" position="-0.526 0.645 10.373" scale="0.012 0.012 0.012" rotation="-90 -90 0"></a-obj-model>
+    <a-entity id="bottleEntity" bottle-updater></a-entity>
+
+    <a-obj-model id="StandartGlass" class="js--glass" src="#Glass-obj" material="color: #FF00FF;" position="-0.083 1.119 10.223" scale="0.0006 0.0006 0.0006" rotation="0 0 0"></a-obj-model>
+    <a-cylinder id="StandartGlassLiquid" position="-0.083 1.119 10.223" scale="0 0 0" rotation="0 0 0" color="#99c0e3"></a-cylinder>
+
+
 
     <a-camera position="0 1.4 11.5">
         <a-cursor 
@@ -63,8 +101,15 @@
             material="color: red; shader: flat">
                 
         </a-cursor>
-        <a-entity scale="0.1 0.1 0" id="cocktailInstructionsContainer" position="-0.8 0.45 -0.7"></a-entity>
+        <a-entity scale="0.1 0.1 0" id="cocktailInstructionsContainer" position="-0.6 0.45 -0.7"></a-entity> 
+        <a-sound src="muziek/Relax - Smooth Trap Soul Hip Hop Beat Chill Instrumental (Prod. Tower B. x L.E.M.).mp3"  autoplay="true" ></a-sound>
+
     </a-camera>
 </a-scene>
 </body>
+
+<script src="scripts/bottleliquidspawners.js"></script>
+<script src="scripts/bottleanimation.js"></script>
+<script src="scripts/begin.js"></script>
+
 </html>

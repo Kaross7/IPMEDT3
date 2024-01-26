@@ -1,31 +1,36 @@
-
 const cocktailList = [
-    "Wodka Old Fashioned", 
-    "Wodka Sour", 
-    "Wodka Collins", 
-    "Wodka Martini", 
-    "Moscow Mule", 
-
+    "Wodka Old Fashioned",
+    "Wodka Sour",
+    "Wodka Collins",
+    "Wodka Martini",
+    "Moscow Mule",
 ];
-const numberList = [];
+
+const numberList = [
+    "bitter",
+    "water",
+    "citroen",
+    "schijf",
+    "ginger",
+    "ijs",
+    "suiker",
+    "siroop",
+    "wodka"
+];
 const ingredientList = [];
 
 
-function startAudioContext() {
-    const audio = document.getElementById('background-music');
-    if (audio.components.sound) {
-        audio.components.sound.playSound();
-    }
+function startNieuweCocktail() {
 
     document.getElementById('cocktailButton').addEventListener('click', showRandomCocktailInstructions);
 
-    document.removeEventListener('click', startAudioContext);
+    document.removeEventListener('click', startNieuweCocktail);
 }
 
 function showRandomCocktailInstructions() {
     const randomCocktail = getRandomCocktail();
     createCocktailInstructions(randomCocktail);
-    laatCocktailZien(randomCocktail); 
+    laatCocktailZien(randomCocktail);
 }
 
 function getRandomCocktail() {
@@ -54,7 +59,9 @@ function laatCocktailZien(cocktail) {
     scene.appendChild(newTextEntity);
 }
 
-document.addEventListener('DOMContentLoaded', startAudioContext);
+document.addEventListener('DOMContentLoaded', startNieuweCocktail);
+
+
 
 function createCocktailInstructions(cocktail) {
     const container = document.getElementById('cocktailInstructionsContainer');
@@ -90,7 +97,7 @@ function updateCheckbox(cocktail) {
 function getInstructionsForCocktail(cocktail) {
     switch (cocktail) {
         case 'Wodka Sour':
-            return "1. Vul een shaker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een glas en serveer met een schijfje citroen.";
+            return "1. Vul een beker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een glas en serveer met een schijfje citroen.";
 
         case 'Moscow Mule':
             return "1. Vul een glas met ijsblokjes.\n2. Voeg 60 ml wodka toe.\n3. Giet 120 ml ginger beer over de wodka.\n4. Voeg 15 ml vers citroensap toe.\n5. Garneer optioneel met een schijfje citroen.";
