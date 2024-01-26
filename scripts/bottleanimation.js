@@ -3,7 +3,7 @@ let SpilledOnce = false;
 let liquorColor = "";
 let _pouringPosition = false;
 
-
+// Start bottle animation
 const TiltBottle = (event) => {
 
     BottleTiltAnimation("0.273, 1.484, 10.223","0, -90, 0")
