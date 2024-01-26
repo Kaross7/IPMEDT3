@@ -6,6 +6,14 @@ const cocktailList = [
     "Moscow Mule",
 ];
 
+const recepten = [
+    ["1. Vul een beker met 60 ml wodka.", "2. Voeg 30 ml vers citroensap toe.", "3. Voeg 15 ml suikersiroop toe.", "4. Schud de ingrediënten goed met ijs.", "5. Zeef de inhoud in een glas en serveer met een schijfje citroen."],
+    ["1. Vul een glas met ijsblokjes.", "2. Voeg 60 ml wodka toe.", "3. Giet 120 ml ginger beer over de wodka.", "4. Voeg 15 ml vers citroensap toe.", "5. Garneer optioneel met een schijfje citroen."],
+    ["1. Vul een mixglas met 60 ml wodka.", "2. Voeg 15 ml citroensap toe.", "3. Roer de ingrediënten goed door.", "4. schemk de inhoud in een glas.", "5. serveer meet schijfje citroen."],
+    ["1. Vul een shaker met 60 ml wodka.", "2. Voeg 30 ml vers citroensap toe.", "3. Voeg 15 ml suikersiroop toe.", "4. Voeg 60 ml bruiswater toe.", "5. Schenk de ingrediënten goed met ijs en de inhoud in een glas. Garneer met een schijfje citroen."],
+    ["1. Plaats een suikerklontje in een glas.", "2. Voeg een paar druppels Angostura bitters toe.", "3. begin te roeren .", "4. Voeg 60 ml wodka toe en roer opnieuw.", "5. Garneer met citroenschijf."]
+]
+
 const numberList = [
     "bitter",
     "water",
@@ -97,19 +105,19 @@ function updateCheckbox(cocktail) {
 function getInstructionsForCocktail(cocktail) {
     switch (cocktail) {
         case 'Wodka Sour':
-            return "1. Vul een beker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Schud de ingrediënten goed met ijs.\n5. Zeef de inhoud in een glas en serveer met een schijfje citroen.";
+            return recepten[0][0] + "\n" + recepten[0][1] + "\n" +recepten[0][2] + "\n" + recepten[0][3] + "\n" + recepten[0][4];
 
         case 'Moscow Mule':
-            return "1. Vul een glas met ijsblokjes.\n2. Voeg 60 ml wodka toe.\n3. Giet 120 ml ginger beer over de wodka.\n4. Voeg 15 ml vers citroensap toe.\n5. Garneer optioneel met een schijfje citroen.";
+            return recepten[1][0] + "\n" + recepten[1][1] + "\n" +recepten[1][2] + "\n" + recepten[1][3] + "\n" + recepten[1][4];
 
         case 'Wodka Martini':
-            return "1. Vul een mixglas met 60 ml wodka.\n2. Voeg 15 ml citroensap toe.\n3. Roer de ingrediënten goed door.\n4. schemk de inhoud in een glas.\n5. serveer meet schijfje citroen.";
+            return recepten[2][0] + "\n" + recepten[2][1] + "\n" +recepten[2][2] + "\n" + recepten[2][3] + "\n" + recepten[2][4];
 
         case 'Wodka Collins':
-            return "1. Vul een shaker met 60 ml wodka.\n2. Voeg 30 ml vers citroensap toe.\n3. Voeg 15 ml suikersiroop toe.\n4. Voeg 60 ml bruiswater toe.\n5. Schenk de ingrediënten goed met ijs en de inhoud in een glas. Garneer met een schijfje citroen.";
+            return recepten[3][0] + "\n" + recepten[3][1] + "\n" +recepten[3][2] + "\n" + recepten[3][3] + "\n" + recepten[3][4];
 
         case 'Wodka Old Fashioned':
-            return "1. Plaats een suikerklontje in een glas.\n2. Voeg een paar druppels Angostura bitters toe.\n3. begin te roeren .\n4. Voeg 60 ml wodka toe en roer opnieuw.\n5. Garneer met citroenschijf.";
+            return recepten[4][0] + "\n" + recepten[4][1] + "\n" +recepten[4][2] + "\n" + recepten[4][3] + "\n" + recepten[4][4];
 
         default:
             return "Geen instructies beschikbaar voor deze cocktail.";
