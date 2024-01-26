@@ -1,13 +1,22 @@
-
 const cocktailList = [
     "Wodka Old Fashioned",
     "Wodka Sour",
     "Wodka Collins",
     "Wodka Martini",
     "Moscow Mule",
-
 ];
-const numberList = [];
+
+const numberList = [
+    "bitter",
+    "water",
+    "citroen",
+    "schijf",
+    "ginger",
+    "ijs",
+    "suiker",
+    "siroop",
+    "wodka"
+];
 const ingredientList = [];
 
 
